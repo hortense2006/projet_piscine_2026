@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageVista - Connexion</title>
+    <link rel="stylesheet" href="src/css/connexion.css">
+</head>
+<body>
+    <main class="auth-page">
+        <section class="intro-panel" aria-label="Bienvenue sur VoyageVista">
+            <a class="brand" href="index.html" aria-label="VoyageVista">
+                <span class="brand-icon">✈</span>
+                <span>VoyageVista</span>
+            </a>
+            <div class="intro-copy">
+                <p class="eyebrow">Explore the world</p>
+                <h1>Hello!</h1>
+                <p>Connectez-vous ou créez votre compte pour retrouver vos voyages, vos destinations favorites et vos prochaines réservations.</p>
+            </div>
+        </section>
+
+        <section class="auth-shell" aria-label="Connexion et inscription">
+            <input class="mode-input" type="radio" name="auth-mode" id="mode-login" checked>
+            <input class="mode-input" type="radio" name="auth-mode" id="mode-signup">
+
+            <div class="mode-switch" role="tablist" aria-label="Choisir le formulaire">
+                <label for="mode-login">Login</label>
+                <label for="mode-signup">Sign up</label>
+            </div>
+
+            <form class="auth-card login-card" action="dashboard.html">
+                <div class="card-heading">
+                    <p class="eyebrow">Bienvenue</p>
+                    <h2>Login</h2>
+                </div>
+
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="votre@email.com" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" placeholder="Votre mot de passe" required>
+
+                <a class="forgot-link" href="#mode-login">Mot de passe oublié ?</a>
+                <button type="submit">Login</button>
+
+                <p class="switch-copy">Pas encore de compte ? <label for="mode-signup">Sign up</label></p>
+            </form>
+
+            <form class="auth-card signup-card" action="dashboard.html">
+                <div class="card-heading">
+                    <p class="eyebrow">Nouveau départ</p>
+                    <h2>Sign Up</h2>
+                </div>
+
+                <label for="signup-name">Nom complet</label>
+                <input id="signup-name" name="name" type="text" placeholder="Votre nom" required>
+
+                <label for="signup-email">Email</label>
+                <input id="signup-email" name="email" type="email" placeholder="votre@email.com" required>
+
+                <label for="signup-password">Password</label>
+                <input id="signup-password" name="password" type="password" placeholder="Créer un mot de passe" required>
+
+                <label for="signup-phone">Téléphone</label>
+                <input id="signup-phone" name="phone" type="tel" placeholder="+33 6 00 00 00 00">
+
+                <button type="submit">Sign Up</button>
+
+                <p class="switch-copy">Déjà un compte ? <label for="mode-login">Back to login</label></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
