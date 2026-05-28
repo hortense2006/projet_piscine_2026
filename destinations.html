@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoyageVista - Dashboard</title>
-    <link rel="stylesheet" href="src/css/dashboard.css">
+    <title>VoyageVista - Destinations</title>
+    <link rel="stylesheet" href="src/css/destination.css">
 </head>
 <body id="top">
     <header class="site-header">
         <div class="layout navbar">
-            <a class="brand" href="#top" aria-label="VoyageVista">
+            <a class="brand" href="dashboard.html" aria-label="VoyageVista">
                 <span class="brand-icon">✈</span>
                 <span>VoyageVista</span>
             </a>
 
             <nav class="main-nav" aria-label="Navigation principale">
-                <a href="#top">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="#voyages">Mes voyages</a>
+                <a href="dashboard.html">Home</a>
+                <a class="active" href="#top">Destinations</a>
+                <a href="dashboard.html#voyages">Mes voyages</a>
                 <a href="#about">About us</a>
                 <a href="profil.html">Profil</a>
                 <a class="logout-link" href="index.html">Log out</a>
@@ -26,43 +26,21 @@
     </header>
 
     <main>
-        <section class="dashboard-hero">
-            <div class="layout hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow">Explore the world</p>
-                    <h1>Bonjour, prêt pour votre prochaine destination ?</h1>
-                    <p class="hero-text">Retrouvez les lieux les plus populaires, comparez les séjours et préparez vos voyages depuis votre espace VoyageVista.</p>
-                </div>
-
-                <form class="trip-search" aria-label="Recherche de séjour">
-                    <div class="trip-field">
-                        <label for="destination">Destination</label>
-                        <input id="destination" type="text" placeholder="Où voulez-vous partir ?">
-                    </div>
-                    <div class="trip-field">
-                        <label for="date">Départ</label>
-                        <input id="date" type="date" value="2026-06-18">
-                    </div>
-                    <div class="trip-field">
-                        <label for="travelers">Voyageurs</label>
-                        <select id="travelers">
-                            <option>2 adultes</option>
-                            <option>1 adulte</option>
-                            <option>Famille</option>
-                        </select>
-                    </div>
-                    <button type="submit">Rechercher</button>
-                </form>
+        <section class="destinations-hero">
+            <div class="layout hero-content">
+                <p class="eyebrow">Explore top destinations</p>
+                <h1>Toutes les destinations VoyageVista</h1>
+                <p>Retrouvez les destinations populaires du dashboard, puis quelques idées plus discrètes pour comparer les envies et les budgets.</p>
             </div>
         </section>
 
-        <section class="layout destinations-panel" id="destinations">
+        <section class="layout destinations-panel">
             <div class="section-header">
                 <div>
-                    <p class="eyebrow">Explore top destinations</p>
+                    <p class="eyebrow">Les mieux notées</p>
                     <h2>Popular Destinations</h2>
                 </div>
-                <a href="destinations.html">Voir toutes les destinations</a>
+                <span>12 destinations</span>
             </div>
 
             <div class="destination-grid">
@@ -171,6 +149,72 @@
                         <h3>Alpes suisses</h3>
                         <p>6 jours · Montagne</p>
                         <div class="card-footer"><span>★ 4.8</span><strong>799 €</strong></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="layout destinations-panel secondary-panel">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Suggestions alternatives</p>
+                    <h2>Autres destinations</h2>
+                </div>
+                <span>Notes plus modestes</span>
+            </div>
+
+            <div class="destination-grid">
+                <article class="destination-card muted-card">
+                    <img src="images/image_bruxelles.jpg" alt="Bruxelles, Belgique">
+                    <div class="destination-content">
+                        <h3>Bruxelles, Belgique</h3>
+                        <p>3 jours · Patrimoine</p>
+                        <div class="card-footer"><span>★ 4.2</span><strong>329 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card muted-card">
+                    <img src="images/image_tunis.png" alt="Tunis, Tunisie">
+                    <div class="destination-content">
+                        <h3>Tunis, Tunisie</h3>
+                        <p>4 jours · Médina</p>
+                        <div class="card-footer"><span>★ 4.1</span><strong>359 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card muted-card">
+                    <img src="images/image_naples.png" alt="Naples, Italie">
+                    <div class="destination-content">
+                        <h3>Naples, Italie</h3>
+                        <p>4 jours · Littoral</p>
+                        <div class="card-footer"><span>★ 4.0</span><strong>379 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card muted-card">
+                    <img src="images/image_split.png" alt="Split, Croatie">
+                    <div class="destination-content">
+                        <h3>Split, Croatie</h3>
+                        <p>5 jours · Adriatique</p>
+                        <div class="card-footer"><span>★ 4.2</span><strong>459 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card muted-card">
+                    <img src="images/image_doha.png" alt="Doha, Qatar">
+                    <div class="destination-content">
+                        <h3>Doha, Qatar</h3>
+                        <p>5 jours · Architecture</p>
+                        <div class="card-footer"><span>★ 3.9</span><strong>689 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card muted-card">
+                    <img src="images/image_innsbruck.png" alt="Innsbruck, Autriche">
+                    <div class="destination-content">
+                        <h3>Innsbruck, Autriche</h3>
+                        <p>5 jours · Montagne</p>
+                        <div class="card-footer"><span>★ 4.1</span><strong>549 €</strong></div>
                     </div>
                 </article>
             </div>
