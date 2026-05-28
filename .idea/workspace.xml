@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="">
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°2.1">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +61,33 @@
       <updated>1779784370638</updated>
       <workItem from="1779784371884" duration="2264000" />
       <workItem from="1779950713023" duration="285000" />
-      <workItem from="1779951571171" duration="442000" />
+      <workItem from="1779951571171" duration="754000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit n°2">
+      <option name="closed" value="true" />
+      <created>1779952032487</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779952032487</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit n°2.1">
+      <option name="closed" value="true" />
+      <created>1779952202973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779952202973</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit n°2" />
+    <MESSAGE value="Commit n°2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°2.1" />
   </component>
 </project>
