@@ -15,12 +15,12 @@
             </a>
 
             <nav class="main-nav" aria-label="Navigation principale">
-                <a href="dashboard.html">Home</a>
+                <a href="dashboard.html">Accueil</a>
                 <a class="active" href="#top">Destinations</a>
                 <a href="dashboard.html#voyages">Mes voyages</a>
-                <a href="#about">About us</a>
+                <a href="#about">À propos</a>
                 <a href="profil.html">Profil</a>
-                <a class="logout-link" href="index.html">Log out</a>
+                <a class="logout-link" href="index.html">Déconnexion</a>
             </nav>
         </div>
     </header>
@@ -28,7 +28,7 @@
     <main>
         <section class="destinations-hero">
             <div class="layout hero-content">
-                <p class="eyebrow">Explore top destinations</p>
+                <p class="eyebrow">Explorez les meilleures destinations</p>
                 <h1>Toutes les destinations VoyageVista</h1>
                 <p>Retrouvez les destinations populaires du dashboard, puis quelques idées plus discrètes pour comparer les envies et les budgets.</p>
             </div>
@@ -38,7 +38,7 @@
             <div class="section-header">
                 <div>
                     <p class="eyebrow">Les mieux notées</p>
-                    <h2>Popular Destinations</h2>
+                    <h2>Destinations populaires</h2>
                 </div>
                 <span>12 destinations</span>
             </div>
@@ -75,7 +75,7 @@
                     <img src="images/image_paris.avif" alt="Paris, France">
                     <div class="destination-content">
                         <h3>Paris, France</h3>
-                        <p>4 jours · City trip</p>
+                        <p>4 jours · Séjour urbain</p>
                         <div class="card-footer"><span>★ 4.6</span><strong>499 €</strong></div>
                     </div>
                 </article>
@@ -93,7 +93,7 @@
                     <img src="images/image_dubai.avif" alt="Dubaï, Émirats">
                     <div class="destination-content">
                         <h3>Dubaï, Émirats</h3>
-                        <p>5 jours · Skyline</p>
+                        <p>5 jours · Gratte-ciel</p>
                         <div class="card-footer"><span>★ 4.8</span><strong>849 €</strong></div>
                     </div>
                 </article>
@@ -222,7 +222,48 @@
     </main>
 
     <footer class="site-footer" id="about">
-        <div class="layout">Footer - Informations sur le site</div>
+        <div class="layout">Pied de page - Informations sur le site</div>
     </footer>
+    <script>
+        const destinationSlugs = [
+            "santorin",
+            "bali",
+            "maldives",
+            "paris",
+            "mykonos",
+            "dubai",
+            "marrakech",
+            "venise",
+            "tokyo",
+            "sydney",
+            "rio",
+            "alpes_suisses",
+            "bruxelles",
+            "tunis",
+            "naples",
+            "split",
+            "doha",
+            "innsbruck"
+        ];
+
+        document.querySelectorAll(".destination-card").forEach((card, index) => {
+            const slug = destinationSlugs[index];
+            if (!slug) {
+                return;
+            }
+
+            card.setAttribute("role", "link");
+            card.setAttribute("tabindex", "0");
+            card.addEventListener("click", () => {
+                window.location.href = `detail_destination.html?destination=${slug}`;
+            });
+            card.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    window.location.href = `detail_destination.html?destination=${slug}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

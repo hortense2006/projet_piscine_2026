@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoyageVista - Dashboard</title>
+    <title>VoyageVista - Tableau de bord</title>
     <link rel="stylesheet" href="src/css/dashboard.css">
 </head>
 <body id="top">
@@ -15,12 +15,12 @@
             </a>
 
             <nav class="main-nav" aria-label="Navigation principale">
-                <a href="#top">Home</a>
+                <a href="#top">Accueil</a>
                 <a href="destinations.html">Destinations</a>
                 <a href="#voyages">Mes voyages</a>
-                <a href="#about">About us</a>
+                <a href="#about">À propos</a>
                 <a href="profil.html">Profil</a>
-                <a class="logout-link" href="index.html">Log out</a>
+                <a class="logout-link" href="index.html">Déconnexion</a>
             </nav>
         </div>
     </header>
@@ -29,7 +29,7 @@
         <section class="dashboard-hero">
             <div class="layout hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Explore the world</p>
+                    <p class="eyebrow">Explorez le monde</p>
                     <h1>Bonjour, prêt pour votre prochaine destination ?</h1>
                     <p class="hero-text">Retrouvez les lieux les plus populaires, comparez les séjours et préparez vos voyages depuis votre espace VoyageVista.</p>
                 </div>
@@ -59,8 +59,8 @@
         <section class="layout destinations-panel" id="destinations">
             <div class="section-header">
                 <div>
-                    <p class="eyebrow">Explore top destinations</p>
-                    <h2>Popular Destinations</h2>
+                    <p class="eyebrow">Explorez les meilleures destinations</p>
+                    <h2>Destinations populaires</h2>
                 </div>
                 <a href="destinations.html">Voir toutes les destinations</a>
             </div>
@@ -97,7 +97,7 @@
                     <img src="images/image_paris.avif" alt="Paris, France">
                     <div class="destination-content">
                         <h3>Paris, France</h3>
-                        <p>4 jours · City trip</p>
+                        <p>4 jours · Séjour urbain</p>
                         <div class="card-footer"><span>★ 4.6</span><strong>499 €</strong></div>
                     </div>
                 </article>
@@ -115,7 +115,7 @@
                     <img src="images/image_dubai.avif" alt="Dubaï, Émirats">
                     <div class="destination-content">
                         <h3>Dubaï, Émirats</h3>
-                        <p>5 jours · Skyline</p>
+                        <p>5 jours · Gratte-ciel</p>
                         <div class="card-footer"><span>★ 4.8</span><strong>849 €</strong></div>
                     </div>
                 </article>
@@ -178,7 +178,42 @@
     </main>
 
     <footer class="site-footer" id="about">
-        <div class="layout">Footer - Informations sur le site</div>
+        <div class="layout">Pied de page - Informations sur le site</div>
     </footer>
+    <script>
+        const destinationSlugs = [
+            "santorin",
+            "bali",
+            "maldives",
+            "paris",
+            "mykonos",
+            "dubai",
+            "marrakech",
+            "venise",
+            "tokyo",
+            "sydney",
+            "rio",
+            "alpes_suisses"
+        ];
+
+        document.querySelectorAll(".destination-card").forEach((card, index) => {
+            const slug = destinationSlugs[index];
+            if (!slug) {
+                return;
+            }
+
+            card.setAttribute("role", "link");
+            card.setAttribute("tabindex", "0");
+            card.addEventListener("click", () => {
+                window.location.href = `detail_destination.html?destination=${slug}`;
+            });
+            card.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    window.location.href = `detail_destination.html?destination=${slug}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

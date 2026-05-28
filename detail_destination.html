@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageVista - Détail destination</title>
+    <link rel="stylesheet" href="src/css/detail_destination.css">
+</head>
+<body id="top">
+    <header class="site-header">
+        <div class="layout navbar">
+            <a class="brand" href="dashboard.html" aria-label="VoyageVista">
+                <span class="brand-icon">✈</span>
+                <span>VoyageVista</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="dashboard.html">Accueil</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="dashboard.html#voyages">Mes voyages</a>
+                <a href="#about">À propos</a>
+                <a href="profil.html">Profil</a>
+                <a class="logout-link" href="index.html">Déconnexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout detail-page">
+        <a class="back-link" href="destinations.html">Retour aux destinations</a>
+
+        <article class="detail-card">
+            <p class="eyebrow">Choix de destination</p>
+            <h1 id="destination-name">Nom de la destination</h1>
+
+            <img id="destination-image" class="destination-image" src="images/image_bali.avif" alt="">
+
+            <div class="detail-grid">
+                <section class="info-panel" aria-label="Informations de la destination">
+                    <h2>Description</h2>
+                    <p id="destination-description"></p>
+
+                    <h2>Prix moyen</h2>
+                    <p id="destination-price"></p>
+
+                    <h2>Liste hôtels</h2>
+                    <ul id="destination-hotels"></ul>
+
+                    <h2>Liste activités</h2>
+                    <ul id="destination-activities"></ul>
+                </section>
+
+                <section class="choice-panel" aria-label="Choix du séjour">
+                    <div class="choice-row">
+                        <div>
+                            <label for="hotel-choice">Choix de l'hôtel</label>
+                            <select id="hotel-choice" name="hotel"></select>
+                        </div>
+                        <button id="add-hotel" type="button">Ajouter au panier</button>
+                    </div>
+
+                    <div class="choice-row">
+                        <div>
+                            <label for="activity-menu">Choix des activités</label>
+                            <details class="activity-dropdown" id="activity-menu">
+                                <summary id="activity-summary">Sélectionner des activités</summary>
+                                <div class="activity-options" id="activity-options"></div>
+                            </details>
+                        </div>
+                        <button id="add-activity" type="button">Ajouter au panier</button>
+                    </div>
+
+                    <section class="cart-panel" aria-label="Panier utilisateur">
+                        <h2>Votre panier</h2>
+                        <p>Articles : <span id="cart-count">0</span></p>
+                        <p>Total estimé : <span id="cart-total">0 €</span></p>
+                        <button id="sort-cart" class="sort-cart" type="button">Trier les articles A-Z</button>
+                        <div class="cart-items" id="cart-items"></div>
+                    </section>
+
+                    <p class="cart-message" id="cart-message" aria-live="polite"></p>
+
+                    <div class="actions">
+                        <button type="button">Valider la sélection</button>
+                        <button type="button">Réserver</button>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="about">
+        <div class="layout">Pied de page - Informations sur le site</div>
+    </footer>
+    <script src="src/js/detail_destination.js"></script>
+</body>
+</html>

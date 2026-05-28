@@ -215,6 +215,7 @@ select {
     border-radius: 8px;
     background: #ffffff;
     box-shadow: 0 10px 24px rgba(33, 68, 111, 0.08);
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
