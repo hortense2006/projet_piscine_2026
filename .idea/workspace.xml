@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°3">
-      <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.html" afterDir="false" />
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°5">
+      <change beforePath="$PROJECT_DIR$/connexion.html" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
       <updated>1779784370638</updated>
       <workItem from="1779784371884" duration="2264000" />
       <workItem from="1779950713023" duration="285000" />
-      <workItem from="1779951571171" duration="2461000" />
+      <workItem from="1779951571171" duration="3720000" />
     </task>
     <task id="LOCAL-00001" summary="Commit n°2">
       <option name="closed" value="true" />
@@ -119,7 +119,23 @@
       <option name="project" value="LOCAL" />
       <updated>1779955810771</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit n°4">
+      <option name="closed" value="true" />
+      <created>1779956276588</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779956276588</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Commit n°5">
+      <option name="closed" value="true" />
+      <created>1779958101149</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779958101149</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +149,8 @@
     <MESSAGE value="Commit n°2.4" />
     <MESSAGE value="Commit n°2.5" />
     <MESSAGE value="Commit n°3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit n°3" />
+    <MESSAGE value="Commit n°4" />
+    <MESSAGE value="Commit n°5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°5" />
   </component>
 </project>
