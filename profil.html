@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageVista - Profil</title>
+    <link rel="stylesheet" href="src/css/profil.css">
+</head>
+<body id="top">
+    <header class="site-header">
+        <div class="layout navbar">
+            <a class="brand" href="dashboard.html" aria-label="VoyageVista">
+                <span class="brand-icon">✈</span>
+                <span>VoyageVista</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="dashboard.html">Home</a>
+                <a href="dashboard.html#destinations">Destinations</a>
+                <a href="#voyages">Mes voyages</a>
+                <a href="#about">About us</a>
+                <a class="active" href="#top">Profil</a>
+                <a class="logout-link" href="index.html">Log out</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-hero">
+            <div class="layout hero-content">
+                <p class="eyebrow">Mon espace voyage</p>
+                <h1>Votre profil VoyageVista</h1>
+                <p>Consultez vos informations, vos envies de voyage et vos sélections favorites depuis une seule page.</p>
+            </div>
+        </section>
+
+        <section class="layout personal-panel" aria-labelledby="personal-title">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Profil</p>
+                    <h2 id="personal-title">Mes informations personnelles</h2>
+                </div>
+                <a href="#top">Modifier</a>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <span class="info-icon">ID</span>
+                    <h3>Identité</h3>
+                    <p>Nom</p>
+                    <p>Prénom</p>
+                    <p>Adresse mail</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="info-icon">⌂</span>
+                    <h3>Adresse</h3>
+                    <p>Rue</p>
+                    <p>Ville</p>
+                    <p>Pays</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="info-icon">★</span>
+                    <h3>Activités favorites</h3>
+                    <p>Plage</p>
+                    <p>Culture</p>
+                    <p>Randonnée</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="info-icon">✦</span>
+                    <h3>Préférences de voyage</h3>
+                    <p>Budget moyen</p>
+                    <p>Départs flexibles</p>
+                    <p>Séjours au soleil</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="layout trips-panel" id="voyages" aria-label="Aperçu des voyages">
+            <input class="tab-input" type="radio" name="trip-tabs" id="tab-flights" checked>
+            <input class="tab-input" type="radio" name="trip-tabs" id="tab-hotels">
+            <input class="tab-input" type="radio" name="trip-tabs" id="tab-activities">
+            <input class="tab-input" type="radio" name="trip-tabs" id="tab-packages">
+
+            <div class="tabs" role="tablist" aria-label="Catégories de voyages">
+                <label for="tab-flights">Flights</label>
+                <label for="tab-hotels">Hotels</label>
+                <label for="tab-activities">Activities</label>
+                <label for="tab-packages">Packages</label>
+            </div>
+
+            <div class="tab-content flights-content">
+                <div>
+                    <p class="eyebrow">Aperçu dynamique</p>
+                    <h2>Vols suivis</h2>
+                    <p>Paris vers Bali, départ préféré en juin 2026. Les meilleurs prix repérés restent autour de 699 €.</p>
+                </div>
+                <img src="images/image_bali.avif" alt="Bali, Indonésie">
+            </div>
+
+            <div class="tab-content hotels-content">
+                <div>
+                    <p class="eyebrow">Aperçu dynamique</p>
+                    <h2>Hôtels favoris</h2>
+                    <p>Vous avez sauvegardé des hôtels proches de la plage, avec piscine et petit-déjeuner inclus.</p>
+                </div>
+                <img src="images/image_maldives.avif" alt="Hôtel aux Maldives">
+            </div>
+
+            <div class="tab-content activities-content">
+                <div>
+                    <p class="eyebrow">Aperçu dynamique</p>
+                    <h2>Activités préférées</h2>
+                    <p>Vos sélections mettent en avant les visites culturelles, les sorties nautiques et les panoramas naturels.</p>
+                </div>
+                <img src="images/image_santorin.avif" alt="Activités à Santorin">
+            </div>
+
+            <div class="tab-content packages-content">
+                <div>
+                    <p class="eyebrow">Aperçu dynamique</p>
+                    <h2>Packages recommandés</h2>
+                    <p>VoyageVista peut combiner vol, hôtel et activités pour préparer un séjour complet en quelques clics.</p>
+                </div>
+                <img src="images/image_dubai.avif" alt="Package voyage à Dubaï">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+        <div class="layout">Footer - Informations sur le site</div>
+    </footer>
+</body>
+</html>
