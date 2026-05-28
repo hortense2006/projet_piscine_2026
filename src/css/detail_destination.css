@@ -271,7 +271,9 @@ summary {
 }
 
 .choice-row button,
-.actions button {
+.reserve-button {
+    display: grid;
+    place-items: center;
     min-height: 46px;
     padding: 0 18px;
     color: #ffffff;
@@ -286,7 +288,7 @@ summary {
 
 .actions {
     display: grid;
-    grid-template-columns: repeat(2, minmax(180px, 210px));
+    grid-template-columns: minmax(180px, 210px);
     gap: 20px;
     justify-content: end;
     margin-top: 18px;
