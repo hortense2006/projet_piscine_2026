@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    color: #10264b;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef6fb;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.layout {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(16, 38, 75, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    min-height: 76px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 184px;
+    color: #10264b;
+    font-size: 1.22rem;
+    font-weight: 800;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: #ffffff;
+    border-radius: 8px;
+    background: #1268e8;
+    box-shadow: 0 12px 24px rgba(18, 104, 232, 0.25);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 3vw, 42px);
+    width: 100%;
+    color: #243a5f;
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    white-space: nowrap;
+}
+
+.logout-link {
+    color: #1268e8;
+}
+
+.dashboard-hero {
+    overflow: hidden;
+    padding: 36px 0 88px;
+    background:
+        linear-gradient(90deg, rgba(247, 251, 255, 0.96) 0%, rgba(247, 251, 255, 0.78) 42%, rgba(247, 251, 255, 0.16) 72%),
+        url("../../images/image_maldives.avif") center/cover;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 520px);
+    gap: 36px;
+    align-items: end;
+    min-height: 410px;
+}
+
+.hero-copy {
+    max-width: 620px;
+    padding: 28px 0;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: #1268e8;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.6rem, 5vw, 4.7rem);
+    line-height: 1.04;
+}
+
+.hero-text {
+    max-width: 500px;
+    margin-top: 20px;
+    color: #314866;
+    font-size: 1.04rem;
+    line-height: 1.65;
+}
+
+.trip-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid rgba(220, 231, 243, 0.95);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 20px 48px rgba(33, 68, 111, 0.18);
+}
+
+.trip-field:first-child {
+    grid-column: span 2;
+}
+
+.trip-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #667890;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.trip-field input,
+.trip-field select {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    color: #10264b;
+    border: 1px solid #dbe6f0;
+    border-radius: 8px;
+    background: #f8fbff;
+    outline: 0;
+}
+
+.trip-search button {
+    grid-column: span 2;
+    height: 46px;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    background: #1268e8;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(18, 104, 232, 0.24);
+}
+
+.destinations-panel {
+    margin-top: 42px;
+    padding: 34px 34px 44px;
+    border: 1px solid #dfeaf4;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(33, 68, 111, 0.09);
+}
+
+.section-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+.section-header a {
+    color: #1268e8;
+    font-size: 0.9rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.destination-card {
+    overflow: hidden;
+    min-height: 266px;
+    border: 1px solid #dfeaf4;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(33, 68, 111, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(33, 68, 111, 0.16);
+}
+
+.destination-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 15px;
+}
+
+.destination-content h3 {
+    margin-bottom: 7px;
+    font-size: 1rem;
+}
+
+.destination-content p {
+    color: #6a7a90;
+    font-size: 0.86rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+    color: #78879a;
+    font-size: 0.86rem;
+}
+
+.card-footer span {
+    color: #f4b400;
+    font-weight: 900;
+}
+
+.card-footer strong {
+    color: #1268e8;
+    font-size: 1rem;
+}
+
+.site-footer {
+    margin-top: 34px;
+    padding: 24px 0;
+    color: #ffffff;
+    text-align: center;
+    background: #1268e8;
+}
+
+@media (max-width: 1040px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 16px 0;
+    }
+
+    .main-nav {
+        order: 2;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-search {
+        max-width: 640px;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .layout {
+        width: min(100% - 22px, 1180px);
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .main-nav {
+        gap: 12px 18px;
+        font-size: 0.78rem;
+    }
+
+    .dashboard-hero {
+        padding-bottom: 74px;
+        background:
+            linear-gradient(180deg, rgba(247, 251, 255, 0.98) 0%, rgba(247, 251, 255, 0.88) 48%, rgba(247, 251, 255, 0.2) 100%),
+            url("../../images/image_maldives.avif") center/cover;
+    }
+
+    .hero-grid {
+        min-height: auto;
+    }
+
+    .hero-copy {
+        padding-top: 14px;
+    }
+
+    .trip-search,
+    .trip-field:first-child,
+    .trip-search button {
+        grid-template-columns: 1fr;
+        grid-column: auto;
+    }
+
+    .destinations-panel {
+        padding: 28px 18px 34px;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header a {
+        display: inline-block;
+        margin-top: 12px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+}

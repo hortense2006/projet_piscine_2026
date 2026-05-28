@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageVista - Dashboard</title>
+    <link rel="stylesheet" href="src/css/dashboard.css">
+</head>
+<body id="top">
+    <header class="site-header">
+        <div class="layout navbar">
+            <a class="brand" href="#top" aria-label="VoyageVista">
+                <span class="brand-icon">✈</span>
+                <span>VoyageVista</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="#top">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#voyages">Mes voyages</a>
+                <a href="#about">About us</a>
+                <a href="#profil">Profil</a>
+                <a class="logout-link" href="index.html">Log out</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-hero">
+            <div class="layout hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Explore the world</p>
+                    <h1>Bonjour, prêt pour votre prochaine destination ?</h1>
+                    <p class="hero-text">Retrouvez les lieux les plus populaires, comparez les séjours et préparez vos voyages depuis votre espace VoyageVista.</p>
+                </div>
+
+                <form class="trip-search" aria-label="Recherche de séjour">
+                    <div class="trip-field">
+                        <label for="destination">Destination</label>
+                        <input id="destination" type="text" placeholder="Où voulez-vous partir ?">
+                    </div>
+                    <div class="trip-field">
+                        <label for="date">Départ</label>
+                        <input id="date" type="date" value="2026-06-18">
+                    </div>
+                    <div class="trip-field">
+                        <label for="travelers">Voyageurs</label>
+                        <select id="travelers">
+                            <option>2 adultes</option>
+                            <option>1 adulte</option>
+                            <option>Famille</option>
+                        </select>
+                    </div>
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="layout destinations-panel" id="destinations">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Explore top destinations</p>
+                    <h2>Popular Destinations</h2>
+                </div>
+                <a href="#destinations">Voir toutes les destinations</a>
+            </div>
+
+            <div class="destination-grid">
+                <article class="destination-card">
+                    <img src="images/image_santorin.avif" alt="Santorin, Grèce">
+                    <div class="destination-content">
+                        <h3>Santorin, Grèce</h3>
+                        <p>5 jours · Mer Égée</p>
+                        <div class="card-footer"><span>★ 4.8</span><strong>899 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_bali.avif" alt="Bali, Indonésie">
+                    <div class="destination-content">
+                        <h3>Bali, Indonésie</h3>
+                        <p>7 jours · Plages</p>
+                        <div class="card-footer"><span>★ 4.7</span><strong>699 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_maldives.avif" alt="Maldives">
+                    <div class="destination-content">
+                        <h3>Maldives</h3>
+                        <p>6 jours · Lagon</p>
+                        <div class="card-footer"><span>★ 4.9</span><strong>1299 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_paris.avif" alt="Paris, France">
+                    <div class="destination-content">
+                        <h3>Paris, France</h3>
+                        <p>4 jours · City trip</p>
+                        <div class="card-footer"><span>★ 4.6</span><strong>499 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_mykonos.avif" alt="Mykonos, Grèce">
+                    <div class="destination-content">
+                        <h3>Mykonos, Grèce</h3>
+                        <p>5 jours · Soleil</p>
+                        <div class="card-footer"><span>★ 4.7</span><strong>759 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_dubai.avif" alt="Dubaï, Émirats">
+                    <div class="destination-content">
+                        <h3>Dubaï, Émirats</h3>
+                        <p>5 jours · Skyline</p>
+                        <div class="card-footer"><span>★ 4.8</span><strong>849 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_marrakech.avif" alt="Marrakech, Maroc">
+                    <div class="destination-content">
+                        <h3>Marrakech, Maroc</h3>
+                        <p>4 jours · Médina</p>
+                        <div class="card-footer"><span>★ 4.5</span><strong>429 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_venise.avif" alt="Venise, Italie">
+                    <div class="destination-content">
+                        <h3>Venise, Italie</h3>
+                        <p>3 jours · Canaux</p>
+                        <div class="card-footer"><span>★ 4.6</span><strong>389 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_tokyo.avif" alt="Tokyo, Japon">
+                    <div class="destination-content">
+                        <h3>Tokyo, Japon</h3>
+                        <p>8 jours · Culture</p>
+                        <div class="card-footer"><span>★ 4.9</span><strong>1390 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_sydney.avif" alt="Sydney, Australie">
+                    <div class="destination-content">
+                        <h3>Sydney, Australie</h3>
+                        <p>9 jours · Océan</p>
+                        <div class="card-footer"><span>★ 4.7</span><strong>1590 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_rio.avif" alt="Rio, Brésil">
+                    <div class="destination-content">
+                        <h3>Rio, Brésil</h3>
+                        <p>7 jours · Carnaval</p>
+                        <div class="card-footer"><span>★ 4.6</span><strong>990 €</strong></div>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <img src="images/image_alpessuisses.avif" alt="Alpes suisses">
+                    <div class="destination-content">
+                        <h3>Alpes suisses</h3>
+                        <p>6 jours · Montagne</p>
+                        <div class="card-footer"><span>★ 4.8</span><strong>799 €</strong></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+        <div class="layout">Footer - Informations sur le site</div>
+    </footer>
+</body>
+</html>
