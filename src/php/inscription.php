@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "root"; // A modifier en fonction de la base de donnée
     $dbname = "VoyageVista";
     $conn = mysqli_connect($servername, $username, $password, $dbname); 
 
