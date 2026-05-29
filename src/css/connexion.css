@@ -190,6 +190,22 @@ input {
     cursor: pointer;
 }
 
+.result-shell {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.result-card {
+    justify-content: center;
+    min-height: 420px;
+}
+
+.result-message {
+    margin-top: 14px;
+    color: #314866;
+    font-size: 1.02rem;
+    line-height: 1.6;
+}
+
 @media (max-width: 940px) {
     .auth-page {
         grid-template-columns: 1fr;
