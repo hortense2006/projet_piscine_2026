@@ -13,7 +13,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM utilisateur WHERE Email = '$email' AND Password = '$password'";
+        $sql = "SELECT * FROM Utilisateur WHERE Email = '$email' AND Password = '$password'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {

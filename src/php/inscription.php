@@ -17,13 +17,13 @@
         $tel= $_POST['phone'];
 
 
-        $checkmail = "SELECT * FROM utilisateur WHERE Email = '$email'"; // Vérifier si l'email existe déjà
+        $checkmail = "SELECT * FROM Utilisateur WHERE Email = '$email'"; // Vérifier si l'email existe déjà
         $result = mysqli_query($conn, $checkmail);
         if (mysqli_num_rows($result) > 0) 
             {
             echo "<h2>Cet email est déjà utilisée.</h2>";
         } else {
-            $sql = "INSERT INTO utilisateur (Nom, Prenom, Email, Password, Role) VALUES ('$name', '$prenom', '$email', '$password', 'user')";
+            $sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Password, Role) VALUES ('$name', '$prenom', '$email', '$password', 'user')";
             if (mysqli_query($conn, $sql)) {
                 echo "<h2>Inscription réussie !</h2>";
             } else {

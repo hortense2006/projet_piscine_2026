@@ -2,6 +2,9 @@
 -- Script MYSQL pour mcd 
 -- ----------------------------------------------------------
 
+CREATE DATABASE IF NOT EXISTS VoyageVista;
+USE VoyageVista;
+
 
 -- ----------------------------
 -- Table: Destination
@@ -22,9 +25,9 @@ CREATE TABLE Utilisateur (
   Id_utilisateur INT NOT NULL AUTO_INCREMENT,
   Nom VARCHAR(150) NOT NULL,
   Prenom VARCHAR(150) NOT NULL,
-  Email VARCHAR(150) NOT NULL,
+  Email VARCHAR(150) NOT NULL UNIQUE,
   Password VARCHAR(150) NOT NULL,
-  Role VARCHAR(500) NOT NULL CHECK (Role IN ('Client', 'Administrateur', 'Gestionnaire')),
+  Role VARCHAR(500) NOT NULL DEFAULT 'Client' CHECK (Role IN ('Client', 'Administrateur', 'Gestionnaire')),
   CONSTRAINT Utilisateur_PK PRIMARY KEY (Id_utilisateur)
 )ENGINE=InnoDB;
 
