@@ -192,6 +192,10 @@ h1 span {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.destination-card.is-hidden {
+    display: none;
+}
+
 .destination-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 34px rgba(33, 68, 111, 0.14);
@@ -225,6 +229,22 @@ h1 span {
     color: #1168e8;
     font-weight: 800;
     white-space: nowrap;
+}
+
+.empty-search {
+    display: none;
+    margin: 8px 36px 0;
+    padding: 18px;
+    color: #5e7190;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #dce8f5;
+    border-radius: 8px;
+    background: #f8fbff;
+}
+
+.empty-search.is-visible {
+    display: block;
 }
 
 footer {
@@ -299,6 +319,10 @@ footer {
     .destination-grid {
         grid-template-columns: 1fr;
         padding: 0 20px;
+    }
+
+    .empty-search {
+        margin: 8px 20px 0;
     }
 
 }

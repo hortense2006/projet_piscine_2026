@@ -12,7 +12,7 @@ function formatPrice(price) {
 
 function getCartGroups(cart) {
     return cart.reduce((groups, item) => {
-        const key = `${item.destination}|${item.type}|${item.label}`;
+        const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}`;
         if (!groups[key]) {
             groups[key] = {
                 ...item,
@@ -59,7 +59,10 @@ function renderOrder() {
         const title = document.createElement("strong");
         title.textContent = item.count > 1 ? `${item.label} (x${item.count})` : item.label;
         const meta = document.createElement("span");
-        meta.textContent = `${item.destination} · ${item.type}`;
+        const reservationMeta = item.depart && item.retour
+            ? ` · ${item.voyageurs} · du ${item.depart} au ${item.retour}`
+            : "";
+        meta.textContent = `${item.destination} · ${item.type}${reservationMeta}`;
         details.appendChild(title);
         details.appendChild(meta);
 

@@ -14,7 +14,7 @@
                 <span>VoyageVista</span>
             </a>
 
-            <form class="search-bar">
+            <form class="search-bar" id="search-form">
                 <input type="search" placeholder="Rechercher une destination" aria-label="Rechercher une destination">
             </form>
 
@@ -41,7 +41,7 @@
                     <div class="eyebrow">Explorez les meilleures destinations</div>
                     <h2>Destinations populaires</h2>
                 </div>
-                <a class="view-all" href="#">Voir toutes les destinations →</a>
+                <a class="view-all" href="destinations.html">Voir toutes les destinations →</a>
             </div>
 
             <div class="destination-grid">
@@ -141,6 +141,7 @@
                     </div>
                 </article>
             </div>
+            <p class="empty-search" id="empty-search" aria-live="polite">Aucune destination ne correspond à votre recherche.</p>
         </section>
     </main>
 
@@ -149,5 +150,6 @@
             <div class="page">VoyageVista - Hortense GALTIER, Valentine SAUVAIRE--MASSONNAT, Ewen ALBALADEJO</div>
         </small>
     </footer>
+    <script src="src/js/index.js"></script>
 </body>
 </html>

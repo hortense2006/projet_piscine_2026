@@ -204,6 +204,71 @@ const destinations = {
         const cartCount = document.getElementById("cart-count");
         const cartTotal = document.getElementById("cart-total");
         const sortCartButton = document.getElementById("sort-cart");
+        const reservationTravelers = document.getElementById("reservation-travelers");
+        const departureDate = document.getElementById("departure-date");
+        const returnDate = document.getElementById("return-date");
+
+        function getSavedReservation() {
+            const savedReservation = JSON.parse(localStorage.getItem("voyagevistaReservation") || "null");
+            return savedReservation && savedReservation.slug === key ? savedReservation : null;
+        }
+
+        function getDurationDays() {
+            const durationMatch = destination.price.match(/(\d+)\s*jours?/);
+            return durationMatch ? Number.parseInt(durationMatch[1], 10) : 1;
+        }
+
+        function formatDateValue(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+        }
+
+        function getDefaultDepartureDate() {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            return formatDateValue(tomorrow);
+        }
+
+        function getTravelerCount() {
+            if (reservationTravelers.value === "Famille") {
+                return 4;
+            }
+
+            return Number.parseInt(reservationTravelers.value, 10) || 1;
+        }
+
+        function saveReservationOptions() {
+            localStorage.setItem("voyagevistaReservation", JSON.stringify({
+                destination: destination.name,
+                slug: key,
+                depart: departureDate.value,
+                retour: returnDate.value,
+                voyageurs: reservationTravelers.value,
+                duree: getDurationDays()
+            }));
+        }
+
+        function updateReturnDate() {
+            if (!departureDate.value) {
+                returnDate.value = "";
+                saveReservationOptions();
+                return;
+            }
+
+            const computedReturnDate = new Date(`${departureDate.value}T00:00:00`);
+            computedReturnDate.setDate(computedReturnDate.getDate() + getDurationDays());
+            returnDate.value = formatDateValue(computedReturnDate);
+            saveReservationOptions();
+        }
+
+        function setupReservationOptions() {
+            const savedReservation = getSavedReservation();
+            reservationTravelers.value = savedReservation?.voyageurs || "2 adultes";
+            departureDate.value = savedReservation?.depart || getDefaultDepartureDate();
+            updateReturnDate();
+        }
 
         destination.hotels.forEach((hotel) => {
             const item = document.createElement("li");
@@ -274,7 +339,8 @@ const destinations = {
 
         function getItemPrice(type) {
             const basePrice = getBasePrice();
-            return type === "hôtel" ? basePrice : Math.round(basePrice * 0.12);
+            const unitPrice = type === "hôtel" ? basePrice : Math.round(basePrice * 0.12);
+            return unitPrice * getTravelerCount();
         }
 
         function formatPrice(price) {
@@ -283,7 +349,7 @@ const destinations = {
 
         function getCartGroups(cart) {
             return cart.reduce((groups, item) => {
-                const key = `${item.destination}|${item.type}|${item.label}`;
+                const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}`;
                 if (!groups[key]) {
                     groups[key] = {
                         ...item,
@@ -323,7 +389,10 @@ const destinations = {
                 const title = document.createElement("strong");
                 title.textContent = item.count > 1 ? `${item.label} (x${item.count})` : item.label;
                 const meta = document.createElement("span");
-                meta.textContent = `${item.destination} · ${item.type}`;
+                const reservationMeta = item.depart && item.retour
+                    ? ` · ${item.voyageurs} · du ${item.depart} au ${item.retour}`
+                    : "";
+                meta.textContent = `${item.destination} · ${item.type}${reservationMeta}`;
                 details.appendChild(title);
                 details.appendChild(meta);
 
@@ -360,6 +429,10 @@ const destinations = {
                 label,
                 destination: destination.name,
                 price: getItemPrice(type),
+                depart: departureDate.value,
+                retour: returnDate.value,
+                voyageurs: reservationTravelers.value,
+                duree: getDurationDays(),
                 date: new Date().toISOString()
             });
             saveCart(cart);
@@ -390,4 +463,11 @@ const destinations = {
             renderCart();
         });
 
+        departureDate.addEventListener("change", updateReturnDate);
+        reservationTravelers.addEventListener("change", () => {
+            saveReservationOptions();
+            renderCart();
+        });
+
+        setupReservationOptions();
         renderCart();

@@ -33,10 +33,11 @@
                     <p class="hero-text">Retrouvez les lieux les plus populaires, comparez les séjours et préparez vos voyages depuis votre espace VoyageVista.</p>
                 </div>
 
-                <form class="trip-search" aria-label="Recherche de séjour">
+                <form class="trip-search" id="trip-search" aria-label="Recherche de séjour">
                     <div class="trip-field">
                         <label for="destination">Destination</label>
-                        <input id="destination" type="text" placeholder="Où voulez-vous partir ?">
+                        <input id="destination" type="text" placeholder="Où voulez-vous partir ?" list="destination-list" autocomplete="off">
+                        <datalist id="destination-list"></datalist>
                     </div>
                     <div class="trip-field">
                         <label for="date">Départ</label>
@@ -51,6 +52,7 @@
                         </select>
                     </div>
                     <button type="submit">Rechercher</button>
+                    <p class="trip-message" id="trip-message" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -197,7 +199,34 @@
             "alpes_suisses"
         ];
 
-        document.querySelectorAll(".destination-card").forEach((card, index) => {
+        const destinationCards = document.querySelectorAll(".destination-card");
+
+        const normalizeText = (text) =>
+            text
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+
+        const destinationSearchData = Array.from(destinationCards).map((card, index) => {
+            const name = card.querySelector("h3")?.textContent.trim() || "";
+
+            return {
+                name,
+                slug: destinationSlugs[index],
+                normalizedName: normalizeText(name),
+                normalizedSlug: normalizeText(destinationSlugs[index] || "")
+            };
+        }).filter((destination) => destination.slug && destination.name);
+
+        const destinationList = document.getElementById("destination-list");
+        destinationSearchData.forEach((destination) => {
+            const option = document.createElement("option");
+            option.value = destination.name;
+            destinationList.appendChild(option);
+        });
+
+        destinationCards.forEach((card, index) => {
             const slug = destinationSlugs[index];
             if (!slug) {
                 return;
@@ -214,6 +243,50 @@
                     window.location.href = `detail_destination.html?destination=${slug}`;
                 }
             });
+        });
+
+        const tripSearch = document.getElementById("trip-search");
+        const destinationInput = document.getElementById("destination");
+        const departureInput = document.getElementById("date");
+        const travelersInput = document.getElementById("travelers");
+        const tripMessage = document.getElementById("trip-message");
+
+        tripSearch.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const query = normalizeText(destinationInput.value);
+            tripMessage.textContent = "";
+            destinationInput.classList.remove("has-error");
+
+            if (!query) {
+                tripMessage.textContent = "Veuillez saisir une destination.";
+                destinationInput.classList.add("has-error");
+                destinationInput.focus();
+                return;
+            }
+
+            const exactDestination = destinationSearchData.find((destination) =>
+                destination.normalizedName === query || destination.normalizedSlug === query
+            );
+            const matchingDestination = exactDestination || destinationSearchData.find((destination) =>
+                destination.normalizedName.includes(query) || destination.normalizedSlug.includes(query)
+            );
+
+            if (!matchingDestination) {
+                tripMessage.textContent = "Cette destination n'est pas encore disponible.";
+                destinationInput.classList.add("has-error");
+                destinationInput.focus();
+                return;
+            }
+
+            localStorage.setItem("voyagevistaReservation", JSON.stringify({
+                destination: matchingDestination.name,
+                slug: matchingDestination.slug,
+                depart: departureInput.value,
+                voyageurs: travelersInput.value
+            }));
+
+            window.location.href = `detail_destination.html?destination=${matchingDestination.slug}`;
         });
     </script>
 </body>

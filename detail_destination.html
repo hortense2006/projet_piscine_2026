@@ -49,6 +49,28 @@
                 </section>
 
                 <section class="choice-panel" aria-label="Choix du séjour">
+                    <section class="reservation-options" aria-label="Options de réservation">
+                        <h2>Options de réservation</h2>
+                        <div class="reservation-fields">
+                            <div class="reservation-field">
+                                <label for="reservation-travelers">Voyageurs</label>
+                                <select id="reservation-travelers">
+                                    <option>1 adulte</option>
+                                    <option>2 adultes</option>
+                                    <option>Famille</option>
+                                </select>
+                            </div>
+                            <div class="reservation-field">
+                                <label for="departure-date">Date de départ</label>
+                                <input id="departure-date" type="date">
+                            </div>
+                            <div class="reservation-field">
+                                <label for="return-date">Date de retour</label>
+                                <input id="return-date" type="date" readonly>
+                            </div>
+                        </div>
+                    </section>
+
                     <div class="choice-row">
                         <div>
                             <label for="hotel-choice">Choix de l'hôtel</label>

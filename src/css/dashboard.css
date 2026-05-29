@@ -162,6 +162,11 @@ select {
     outline: 0;
 }
 
+.trip-field input.has-error {
+    border-color: #e14f5a;
+    background: #fff8f8;
+}
+
 .trip-search button {
     grid-column: span 2;
     height: 46px;
@@ -172,6 +177,14 @@ select {
     font-weight: 900;
     cursor: pointer;
     box-shadow: 0 12px 24px rgba(18, 104, 232, 0.24);
+}
+
+.trip-message {
+    grid-column: span 2;
+    min-height: 18px;
+    color: #e14f5a;
+    font-size: 0.86rem;
+    font-weight: 800;
 }
 
 .destinations-panel {
@@ -330,7 +343,8 @@ select {
 
     .trip-search,
     .trip-field:first-child,
-    .trip-search button {
+    .trip-search button,
+    .trip-message {
         grid-template-columns: 1fr;
         grid-column: auto;
     }
