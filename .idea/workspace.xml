@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°10">
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VoyageVista.sql" beforeDir="false" afterPath="$PROJECT_DIR$/VoyageVista.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion.html" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/inscription.php" afterDir="false" />
     </list>
@@ -25,6 +23,7 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="ead8e739-57eb-46ba-a5c3-3da8a9fae418" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -35,6 +34,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Database Script.VoyageVista.sql.executor": "Run",
+    "JavaScript Debug.connexion.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -53,9 +55,25 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "7a0a3d25-73ef-4fd0-8b54-131d884e35ab"
     ]
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="VoyageVista.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/VoyageVista.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="7a0a3d25-73ef-4fd0-8b54-131d884e35ab" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.VoyageVista.sql" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,7 +92,7 @@
       <workItem from="1779784371884" duration="2264000" />
       <workItem from="1779950713023" duration="285000" />
       <workItem from="1779951571171" duration="11894000" />
-      <workItem from="1780051234645" duration="1736000" />
+      <workItem from="1780051234645" duration="2758000" />
     </task>
     <task id="LOCAL-00001" summary="Commit n°2">
       <option name="closed" value="true" />
@@ -268,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780039560911</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Commit n°11">
+      <option name="closed" value="true" />
+      <created>1780054665970</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1780054665971</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +321,7 @@
     <MESSAGE value="Commit n°9" />
     <MESSAGE value="Final commit" />
     <MESSAGE value="Commit n°10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit n°10" />
+    <MESSAGE value="Commit n°11" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°11" />
   </component>
 </project>

@@ -19,6 +19,7 @@
         if (mysqli_num_rows($result) > 0) {
             echo "<h2>Connexion réussie !</h2>";
             echo "<p>Bienvenue, " . htmlspecialchars($email) . "!</p>";
+            echo "<script>setTimeout(function() { window.location.href = '../../dashboard.html'; }, 1500);</script>";
         } else {
             echo "<h2>Échec de la connexion</h2>";
             echo "<p>Email ou mot de passe incorrect.</p>";

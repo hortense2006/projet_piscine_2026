@@ -26,6 +26,7 @@
             $sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Password, Role) VALUES ('$name', '$prenom', '$email', '$password', 'user')";
             if (mysqli_query($conn, $sql)) {
                 echo "<h2>Inscription réussie !</h2>";
+                echo "<script>setTimeout(function() { window.location.href = '../../dashboard.html'; }, 1500);</script>";
             } else {
                 echo "<p>Erreur lors de l'inscription : " . mysqli_error($conn) . "</p>";
             }
