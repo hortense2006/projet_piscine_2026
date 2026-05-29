@@ -29,7 +29,7 @@
                 <label for="mode-signup">Inscription</label>
             </div>
 
-            <form class="auth-card login-card" action="connexion.php" method="post">
+            <form class="auth-card login-card" action="src/php/connexion.php" method="post">
                 <div class="card-heading">
                     <p class="eyebrow">Bienvenue</p>
                     <h2>Connexion</h2>
@@ -42,19 +42,21 @@
                 <input id="login-password" name="password" type="password" placeholder="Votre mot de passe" required>
 
                 <a class="forgot-link" href="#mode-login">Mot de passe oublié ?</a>
-                <button type="submit">Connexion</button>
-
+                <button type="submit" name="loginBtn">Connexion</button>
                 <p class="switch-copy">Pas encore de compte ? <label for="mode-signup">Inscription</label></p>
             </form>
 
-            <form class="auth-card signup-card" action="inscription.php" method="post">
+            <form class="auth-card signup-card" action="src/php/inscription.php" method="post">
                 <div class="card-heading">
                     <p class="eyebrow">Nouveau départ</p>
                     <h2>Inscription</h2>
                 </div>
 
-                <label for="signup-name">Nom complet</label>
+                <label for="signup-name">Nom</label>
                 <input id="signup-name" name="name" type="text" placeholder="Votre nom" required>
+
+                <label for="signup-surname">Prénom</label>
+                <input id="signup-surname" name="surname" type="text" placeholder="Votre prénom" required>
 
                 <label for="signup-email">E-mail</label>
                 <input id="signup-email" name="email" type="email" placeholder="votre@email.com" required>
@@ -65,7 +67,7 @@
                 <label for="signup-phone">Téléphone</label>
                 <input id="signup-phone" name="phone" type="tel" placeholder="+33 6 00 00 00 00">
 
-                <button type="submit">Inscription</button>
+                <button type="submit" name="inscriptionBtn">Inscription</button>
 
                 <p class="switch-copy">Déjà un compte ? <label for="mode-login">Retour à la connexion</label></p>
             </form>
