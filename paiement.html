@@ -17,8 +17,9 @@
             <nav class="main-nav" aria-label="Navigation principale">
                 <a href="dashboard.html">Accueil</a>
                 <a href="destinations.html">Destinations</a>
+                <a href="dashboard.html#voyages">Mes voyages</a>
                 <a href="about.html">À propos</a>
-                <a href="profil.html">Profil</a>
+                <a href="src/php/profil.php">Profil</a>
                 <a class="logout-link" href="index.html">Déconnexion</a>
             </nav>
         </div>
@@ -41,14 +42,18 @@
 
                     <div class="order-items" id="order-items"></div>
                 </section>
-
+            
                 <aside class="payment-summary" aria-label="Total de la commande">
                     <h2>Total</h2>
                     <p class="total-price" id="order-total">0 €</p>
                     <p class="payment-note">Le paiement validera les éléments présents dans votre panier.</p>
-                    <button id="pay-button" type="button">Payer</button>
+                <form id="payment-form" action="src/php/paiement.php" method="post">
+                    <input type="hidden" name="total_price" id="total-price-input" value="0">
+                    <button id="pay-button" type="submit" name="pay">Payer</button>
+                </form>
                     <p class="payment-message" id="payment-message" aria-live="polite"></p>
                 </aside>
+                </form>
             </div>
         </section>
     </main>
