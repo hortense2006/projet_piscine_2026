@@ -181,6 +181,23 @@ const destinations = {
             }
         };
 
+        // gestion du beandeau de navigation
+        const statutConnexion = localStorage.getItem("statutConnexion");
+        const navVisiteur = document.getElementById("nav-visiteur");
+        const navConnecte = document.getElementById("nav-connecte");
+        const btnDeconnexion = document.getElementById("btn-deconnexion");
+
+        if (statutConnexion === "connecte") {
+            if (navVisiteur) navVisiteur.style.display = "none";
+            if (navConnecte) navConnecte.style.display = "flex";
+        }
+
+        btnDeconnexion?.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("statutConnexion");
+            window.location.reload();
+        });
+
         const params = new URLSearchParams(window.location.search);
         const key = params.get("destination") || "santorin";
         const destination = destinations[key] || destinations.santorin;
@@ -422,7 +439,15 @@ const destinations = {
                 cartItems.appendChild(row);
             });
         }
+
         function addToCart(type, label) {
+            const statutConnexion = localStorage.getItem("statutConnexion");
+            if (statutConnexion !== "connecte") {
+                alert("Vous devez d'abord vous connecter ou créer un compte pour pouvoir planifier un séjour.");
+                window.location.href = "connexion.html";
+                return;
+            }
+
             const cart = getCart();
             cart.push({
                 type,
@@ -471,3 +496,5 @@ const destinations = {
 
         setupReservationOptions();
         renderCart();
+        
+
