@@ -66,7 +66,8 @@
         } else {
             $sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Password, Role) VALUES ('$name', '$prenom', '$email', '$password', 'user')";
             if (mysqli_query($conn, $sql)) {
-                afficherPageInscription("Inscription réussie !", "Votre compte a bien été créé.", true);
+                header("Location: ../../inscription.html");
+                exit();
             } else {
                 afficherPageInscription("Erreur d'inscription", "Erreur lors de l'inscription : " . htmlspecialchars(mysqli_error($conn)));
             }
