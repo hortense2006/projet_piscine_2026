@@ -76,15 +76,16 @@ function renderOrder() {
     });
 }
 
-payButton.addEventListener("click", () => {
-    if (getCart().length === 0) {
-        paymentMessage.textContent = "Votre panier est vide.";
-        return;
-    }
-
-    saveCart([]);
-    renderOrder();
-    paymentMessage.textContent = "Paiement confirmé. Merci pour votre réservation.";
-});
 
 renderOrder();
+
+document.getElementById("payment-form").addEventListener("submit", (e) => {
+    const cart = getCart();
+
+    let totalPrice = cart.reduce(
+        (sum, item) => sum + (Number(item.price) || 0),
+        0
+    );
+
+    document.getElementById("total-price-input").value = totalPrice;
+});
