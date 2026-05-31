@@ -68,7 +68,7 @@ CREATE TABLE Activite (
 CREATE TABLE Hebergement (
   ID_hebergement INT NOT NULL AUTO_INCREMENT,
   Nom VARCHAR(150) NOT NULL,
-  Type VARCHAR(150) NOT NULL CHECK (Type IN ('HÙtel', 'Appartement', 'Villa', 'Camping')),
+  Type VARCHAR(150) NOT NULL CHECK (Type IN ('H√¥tel', 'Appartement', 'Villa', 'Camping')),
   Capacite_max INT NOT NULL,
   Prix_nuit DECIMAL(19,4) NOT NULL,
   CONSTRAINT Hebergement_PK PRIMARY KEY (ID_hebergement)
@@ -81,7 +81,7 @@ CREATE TABLE Hebergement (
 CREATE TABLE Sejour (
   ID_sejour INT NOT NULL AUTO_INCREMENT,
   Date_creation TIMESTAMP NOT NULL,
-  Statut VARCHAR(500) NOT NULL CHECK (Statut IN ('En attente', 'ConfirmÈ', 'AnnulÈ')),
+  Statut VARCHAR(500) NOT NULL CHECK (Statut IN ('En attente', 'Confirm√©', 'Annul√©')),
   Prix_total DECIMAL(19,4) NOT NULL,
   Id_utilisateur INT NOT NULL,
   CONSTRAINT Sejour_PK PRIMARY KEY (ID_sejour),
@@ -93,7 +93,7 @@ CREATE TABLE Sejour (
 -- Table: Payer
 -- ----------------------------
 CREATE TABLE Payer (
-  ID_paiement INT NOT NULL,
+  ID_paiement INT NOT NULL AUTO_INCREMENT,
   Id_utilisateur INT NOT NULL,
   CONSTRAINT Payer_PK PRIMARY KEY (ID_paiement, Id_utilisateur),
   CONSTRAINT Payer_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur)
@@ -104,6 +104,6 @@ CREATE TABLE Payer (
 
 /******************************************************************************************************
 *                                                                                                     *
-*      -->    DÈsolÈ, il faut activer cette version pour voir la suite du script !                    *
+*      -->    D√©sol√©, il faut activer cette version pour voir la suite du script !                    *
 *                                                                                                     *
 *******************************************************************************************************/
