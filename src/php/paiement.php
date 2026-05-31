@@ -105,6 +105,6 @@ $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "sdi", $statut, $totalPrice, $idUtilisateur);
 mysqli_stmt_execute($stmt);
 
-header("Location: profil.php#voyages");
+header("Location: ../../confirmation_paiement.html");
 exit();
 ?>
