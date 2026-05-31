@@ -2,12 +2,12 @@
 
 Projet de développement Web Dynamique réalisé par Hortense GALTIER, Valentine SAUVAIRE-MASSONNAT et Ewen ALBALADEJO.
 
-# Prérequis 
+## Prérequis 
 Ce projet n'utilise pas de framework externe complexe. Pour le faire fonctionner, vous avez uniquement besoin de :
 - Un serveur web local avec PHP et MySQL (ex: **WAMP, XAMPP ou MAMP**).
 - Un navigateur web moderne (Chrome, Firefox...).
 
-# Instructions d'installation
+## Instructions d'installation
 
 **Étape 1 : Préparation des fichiers**
 1. Téléchargez le code source ou clonez ce dépôt GitHub.
@@ -25,5 +25,5 @@ Ce projet n'utilise pas de framework externe complexe. Pour le faire fonctionner
 1. Ouvrez votre navigateur web.
 2. Accédez à l'URL suivante : `http://localhost/projet_piscine_2026/index.html` (adaptez le nom du dossier selon comment vous l'avez nommé).
 
-# Configuration de la connexion (Info pour les professeurs)
+## Configuration de la connexion (Info pour les professeurs)
 Si votre configuration MySQL utilise un mot de passe spécifique (autre que vide pour root), veuillez modifier les identifiants de connexion PDO présents au début de nos scripts dans le dossier `src/php/` (ex: `connexion.php`, `inscription.php`).
