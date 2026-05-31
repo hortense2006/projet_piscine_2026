@@ -4,30 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°15">
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detail_destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/detail_destination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/inscription.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "valentineSM"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;valentineSM&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/hortense2006/projet_piscine_2026.git",
-    "accountId": "0bfad9e9-3e5e-43f1-80ca-b03f8bfc3edd"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hortense2006/projet_piscine_2026.git&quot;,
+    &quot;accountId&quot;: &quot;0bfad9e9-3e5e-43f1-80ca-b03f8bfc3edd&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -36,26 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/MAMP/htdocs/PROJET PISCINE/projet_VOYAGEVISTA_2026",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "show.migrate.to.gradle.popup": "false",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/MAMP/htdocs/PROJET PISCINE/projet_VOYAGEVISTA_2026&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,6 +80,9 @@
       <updated>1779784370638</updated>
       <workItem from="1779784371884" duration="2264000" />
       <workItem from="1779950713023" duration="285000" />
+      <workItem from="1779951571171" duration="11894000" />
+      <workItem from="1780051234645" duration="4013000" />
+      <workItem from="1780116448748" duration="933000" />
       <workItem from="1779951571171" duration="4826000" />
     </task>
     <task id="LOCAL-00001" summary="Commit n°2">
@@ -202,6 +212,46 @@
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
       <updated>1780142316062</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Commit n°10">
+      <option name="closed" value="true" />
+      <created>1780039560911</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1780039560911</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Commit n°11">
+      <option name="closed" value="true" />
+      <created>1780054665970</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1780054665971</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Commit n°11">
+      <option name="closed" value="true" />
+      <created>1780055693567</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1780055693567</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Commit n°11">
+      <option name="closed" value="true" />
+      <created>1780056847045</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1780056847045</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Commit n°11">
+      <option name="closed" value="true" />
+      <created>1780116509639</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1780116509639</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
