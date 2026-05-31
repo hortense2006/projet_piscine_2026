@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     function afficherPageInscription($titre, $message, $redirection = false) {
         echo "<!DOCTYPE html>";
         echo "<html lang='fr'>";
@@ -61,14 +63,26 @@
         $tel= $_POST['phone'];
 
 
-        $checkmail = "SELECT * FROM Utilisateur WHERE Email = '$email'"; // Vérifier si l'email existe déjà
-        $result = mysqli_query($conn, $checkmail);
+        $checkmail = "SELECT Id_utilisateur FROM Utilisateur WHERE Email = ?";
+        $checkStmt = mysqli_prepare($conn, $checkmail);
+        mysqli_stmt_bind_param($checkStmt, "s", $email);
+        mysqli_stmt_execute($checkStmt);
+        $result = mysqli_stmt_get_result($checkStmt);
         if (mysqli_num_rows($result) > 0) 
             {
             afficherPageInscription("Inscription impossible", "Cet email est déjà utilisé.");
         } else {
-            $sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Password, Role) VALUES ('$name', '$prenom', '$email', '$password', 'user')";
-            if (mysqli_query($conn, $sql)) {
+            $role = "Client";
+            $sql = "INSERT INTO Utilisateur (Nom, Prenom, Email, Password, Role) VALUES (?, ?, ?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "sssss", $name, $prenom, $email, $password, $role);
+            if (mysqli_stmt_execute($stmt)) {
+                $_SESSION["Id_utilisateur"] = mysqli_insert_id($conn);
+                $_SESSION["Nom"] = $name;
+                $_SESSION["Prenom"] = $prenom;
+                $_SESSION["Email"] = $email;
+                $_SESSION["Role"] = $role;
+                $_SESSION["email"] = $email;
                 header("Location: ../../inscription.html");
                 exit();
             } else {

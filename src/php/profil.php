@@ -11,9 +11,42 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $name = "SELECT Prenom, Nom FROM utilisateur WHERE Email = '".$_SESSION['email']."'";
-    $result = mysqli_query($conn, $name);
-    $row = mysqli_fetch_assoc($result);
+    if (!isset($_SESSION["Id_utilisateur"])) {
+        header("Location: ../../connexion.html");
+        exit();
+    }
+
+    $idUtilisateur = $_SESSION["Id_utilisateur"];
+
+    $userSql = "SELECT Id_utilisateur, Nom, Prenom, Email, Role FROM Utilisateur WHERE Id_utilisateur = ?";
+    $userStmt = mysqli_prepare($conn, $userSql);
+    mysqli_stmt_bind_param($userStmt, "i", $idUtilisateur);
+    mysqli_stmt_execute($userStmt);
+    $userResult = mysqli_stmt_get_result($userStmt);
+    $user = mysqli_fetch_assoc($userResult);
+
+    if (!$user) {
+        session_destroy();
+        header("Location: ../../connexion.html");
+        exit();
+    }
+
+    $_SESSION["Nom"] = $user["Nom"];
+    $_SESSION["Prenom"] = $user["Prenom"];
+    $_SESSION["Email"] = $user["Email"];
+    $_SESSION["Role"] = $user["Role"];
+    $_SESSION["email"] = $user["Email"];
+
+    $sejourSql = "SELECT ID_sejour, Date_creation, Statut, Prix_total FROM Sejour WHERE Id_utilisateur = ? ORDER BY Date_creation DESC, ID_sejour DESC";
+    $sejourStmt = mysqli_prepare($conn, $sejourSql);
+    mysqli_stmt_bind_param($sejourStmt, "i", $idUtilisateur);
+    mysqli_stmt_execute($sejourStmt);
+    $sejourResult = mysqli_stmt_get_result($sejourStmt);
+    $sejours = [];
+
+    while ($sejour = mysqli_fetch_assoc($sejourResult)) {
+        $sejours[] = $sejour;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -65,8 +98,9 @@
                 <article class="info-card">
                     <span class="info-icon">ID</span>
                     <h3>Identité</h3>
-                    <p><?php echo "Nom : " . htmlspecialchars($row['Prenom']) . " " . htmlspecialchars($row['Nom']); ?></p>
-                    <p><?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                    <p><?php echo "Nom : " . htmlspecialchars($user["Prenom"] . " " . $user["Nom"]); ?></p>
+                    <p><?php echo "Email : " . htmlspecialchars($user["Email"]); ?></p>
+                    <p><?php echo "Rôle : " . htmlspecialchars($user["Role"]); ?></p>
                 </article>
 
                 <article class="info-card">
@@ -110,9 +144,22 @@
 
             <div class="tab-content flights-content">
                 <div>
-                    <p class="eyebrow">Aperçu dynamique</p>
-                    <h2>Vols suivis</h2>
-                    <p>Paris vers Bali, départ préféré en juin 2026. Les meilleurs prix repérés restent autour de 699 €.</p>
+                    <p class="eyebrow">Historique</p>
+                    <h2>Mes voyages réservés</h2>
+                    <?php if (count($sejours) === 0): ?>
+                        <p>Aucun voyage réservé pour le moment.</p>
+                    <?php else: ?>
+                        <?php foreach ($sejours as $sejour): ?>
+                            <p>
+                                <?php
+                                    echo "Séjour #" . htmlspecialchars($sejour["ID_sejour"]) .
+                                        " - " . htmlspecialchars($sejour["Statut"]) .
+                                        " - " . htmlspecialchars(number_format((float)$sejour["Prix_total"], 2, ",", " ")) . " €" .
+                                        " - réservé le " . htmlspecialchars($sejour["Date_creation"]);
+                                ?>
+                            </p>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
                 <img src="../../images/image_bali.avif" alt="Bali, Indonésie">
             </div>

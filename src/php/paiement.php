@@ -12,24 +12,32 @@ if (!$conn) {
     die("Erreur connexion");
 }
 
-if (isset($_POST["pay"])) {
-    $totalPrice = mysqli_real_escape_string($conn, $_POST["total_price"] ?? "0");
-
-    if (isset($_SESSION["email"])) {
-        $userid = "SELECT Id_utilisateur FROM utilisateur WHERE Email = '" . mysqli_real_escape_string($conn, $_SESSION["email"]) . "'";
-        $result = mysqli_query($conn, $userid);
-        $row = mysqli_fetch_assoc($result);
-
-        if ($row && isset($row["Id_utilisateur"])) {
-            $sql = "INSERT INTO sejour (Statut, Prix_total, Id_utilisateur) VALUES ('Payé', '" . $totalPrice . "', " . $row["Id_utilisateur"] . ")";
-            mysqli_query($conn, $sql);
-        }
-    }
-
-    header("Location: ../../confirmation_paiement.html?total=" . urlencode($totalPrice));
+if (!isset($_SESSION["Id_utilisateur"])) {
+    header("Location: ../../connexion.html");
     exit();
 }
 
-header("Location: ../../paiement.html");
+if (!isset($_POST["pay"])) {
+    header("Location: ../../paiement.html");
+    exit();
+}
+
+$idUtilisateur = (int) $_SESSION["Id_utilisateur"];
+$totalPrice = (float) ($_POST["total_price"] ?? 0);
+$orderItems = json_decode($_POST["order_items"] ?? "[]", true);
+
+if (!is_array($orderItems)) {
+    $orderItems = [];
+}
+
+$_SESSION["dernier_panier"] = $orderItems;
+
+$statut = "Confirmé";
+$sql = "INSERT INTO Sejour (Date_creation, Statut, Prix_total, Id_utilisateur) VALUES (NOW(), ?, ?, ?)";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "sdi", $statut, $totalPrice, $idUtilisateur);
+mysqli_stmt_execute($stmt);
+
+header("Location: profil.php#voyages");
 exit();
 ?>

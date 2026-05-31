@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°12">
-      <change beforePath="$PROJECT_DIR$/paiement.html" beforeDir="false" afterPath="$PROJECT_DIR$/paiement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/paiement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/paiement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/paiement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/paiement.js" afterDir="false" />
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°13">
+      <change beforePath="$PROJECT_DIR$/inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/inscription.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/paiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/paiement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/profil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780218924075</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Commit n°13">
+      <option name="closed" value="true" />
+      <created>1780219692287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780219692287</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,10 +288,10 @@
     <MESSAGE value="Commit n°4" />
     <MESSAGE value="Commit n°5" />
     <MESSAGE value="Commit n°6" />
-    <MESSAGE value="Commit n°13" />
     <MESSAGE value="Commit n°14" />
     <MESSAGE value="Commit n°15" />
     <MESSAGE value="Commit n°12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit n°12" />
+    <MESSAGE value="Commit n°13" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°13" />
   </component>
 </project>
