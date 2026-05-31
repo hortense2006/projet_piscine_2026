@@ -14,6 +14,7 @@ CREATE TABLE Destination (
   Nom_ville VARCHAR(150) NOT NULL,
   Pays VARCHAR(150) NOT NULL,
   Description TEXT NOT NULL,
+  Id_utilisateur INT NOT NULL,
   CONSTRAINT Destination_PK PRIMARY KEY (Id_destination)
 )ENGINE=InnoDB;
 
@@ -44,6 +45,7 @@ CREATE TABLE Transport (
   Date_arrivee DATETIME NOT NULL,
   Prix DECIMAL(19,4) NOT NULL,
   Capacite INT NOT NULL,
+  Id_utilisateur INT NOT NULL,
   CONSTRAINT Transport_PK PRIMARY KEY (ID_transport)
 )ENGINE=InnoDB;
 
@@ -58,6 +60,7 @@ CREATE TABLE Activite (
   Heure DATETIME NOT NULL,
   Capacite_max INT NOT NULL,
   Prix DECIMAL(19,4) NOT NULL,
+  Id_utilisateur INT NOT NULL,
   CONSTRAINT Activite_PK PRIMARY KEY (ID_activite)
 )ENGINE=InnoDB;
 
@@ -71,6 +74,7 @@ CREATE TABLE Hebergement (
   Type VARCHAR(150) NOT NULL CHECK (Type IN ('Hôtel', 'Appartement', 'Villa', 'Camping')),
   Capacite_max INT NOT NULL,
   Prix_nuit DECIMAL(19,4) NOT NULL,
+  Id_utilisateur INT NOT NULL,
   CONSTRAINT Hebergement_PK PRIMARY KEY (ID_hebergement)
 )ENGINE=InnoDB;
 
@@ -98,6 +102,18 @@ CREATE TABLE Payer (
   CONSTRAINT Payer_PK PRIMARY KEY (ID_paiement, Id_utilisateur),
   CONSTRAINT Payer_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur)
 )ENGINE=InnoDB;
+
+ALTER TABLE Destination
+  ADD CONSTRAINT Destination_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur);
+
+ALTER TABLE Transport
+  ADD CONSTRAINT Transport_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur);
+
+ALTER TABLE Activite
+  ADD CONSTRAINT Activite_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur);
+
+ALTER TABLE Hebergement
+  ADD CONSTRAINT Hebergement_Id_utilisateur_FK FOREIGN KEY (Id_utilisateur) REFERENCES Utilisateur (Id_utilisateur);
 
 
 -- ----------------------------
