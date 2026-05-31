@@ -49,11 +49,11 @@
                     <p class="payment-note">Le paiement validera les éléments présents dans votre panier.</p>
                 <form id="payment-form" action="src/php/paiement.php" method="post">
                     <input type="hidden" name="total_price" id="total-price-input" value="0">
+                    <input type="hidden" name="order_items" id="order-items-input" value="">
                     <button id="pay-button" type="submit" name="pay">Payer</button>
                 </form>
                     <p class="payment-message" id="payment-message" aria-live="polite"></p>
                 </aside>
-                </form>
             </div>
         </section>
     </main>

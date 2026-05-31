@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageVista - Confirmation du paiement</title>
+    <link rel="stylesheet" href="src/css/paiement.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="layout navbar">
+            <a class="brand" href="dashboard.html" aria-label="VoyageVista">
+                <span class="brand-icon">✈</span>
+                <span>VoyageVista</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="dashboard.html">Accueil</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="about.html">À propos</a>
+                <a href="src/php/profil.php">Profil</a>
+                <a class="logout-link" href="index.html">Déconnexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout payment-page">
+        <section class="payment-panel confirmation-panel">
+            <div class="payment-header confirmation-header">
+                <p class="eyebrow">Paiement confirmé</p>
+                <h1>Paiement réussi !</h1>
+                <p>Votre commande a été traitée avec succès. Merci d'avoir choisi VoyageVista pour votre prochain séjour.</p>
+            </div>
+
+            <div class="summary-grid">
+                <section class="order-summary" aria-label="Éléments commandés">
+                    <div class="summary-top">
+                        <h2>Liste des éléments commandés</h2>
+                        <p><span id="confirmation-count">0</span> article(s)</p>
+                    </div>
+
+                    <div class="order-items" id="confirmation-items"></div>
+                </section>
+
+                <aside class="payment-summary" aria-label="Total payé">
+                    <h2>Coût total</h2>
+                    <p class="total-price" id="confirmation-total">0 €</p>
+                    <p class="payment-note">Votre réservation est maintenant enregistrée.</p>
+                    <a class="dashboard-button" href="dashboard.html">Retour au dashboard</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+        <small>
+            <div class="layout">VoyageVista - Hortense GALTIER, Valentine SAUVAIRE--MASSONNAT, Ewen ALBALADEJO</div>
+        </small>
+    </footer>
+
+    <script src="src/js/confirmation_paiement.js"></script>
+</body>
+</html>

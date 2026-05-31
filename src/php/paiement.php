@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -11,38 +12,24 @@ if (!$conn) {
     die("Erreur connexion");
 }
 
-if(isset($_POST["pay"])) 
-    {
+if (isset($_POST["pay"])) {
+    $totalPrice = mysqli_real_escape_string($conn, $_POST["total_price"] ?? "0");
 
-    echo "<h2>Paiement réussi !</h2>";
-    echo "<p>Votre commande a été traitée avec succès.</p>";
-    $name = "SELECT Prenom, Nom FROM utilisateur WHERE Email = '".$_SESSION['email']."'";
+    if (isset($_SESSION["email"])) {
+        $userid = "SELECT Id_utilisateur FROM utilisateur WHERE Email = '" . mysqli_real_escape_string($conn, $_SESSION["email"]) . "'";
+        $result = mysqli_query($conn, $userid);
+        $row = mysqli_fetch_assoc($result);
 
-    $result = mysqli_query($conn, $name);
-    $row = mysqli_fetch_assoc($result);
-    echo"<p>Merci beaucoup d'avoir choisi VoyageVista : " . htmlspecialchars($row['Prenom']) . " " . htmlspecialchars($row['Nom']) . " !</p>";
-
-    echo "<h2>Coût total : " . htmlspecialchars($_POST['total_price']) . " €</h2>";   
-    echo "<p>Liste des éléments commandés : " . htmlspecialchars($_POST['order_items']) . "</p>";
-
-    $userid = "SELECT Id_utilisateur FROM utilisateur WHERE Email = '".$_SESSION['email']."'";
-    $result = mysqli_query($conn, $userid);
-    $row = mysqli_fetch_assoc($result);
-    $sql = "INSERT INTO sejour (Statut, Prix_total,Id_utilisateur) VALUES ('Payé', '" . mysqli_real_escape_string($conn, $_POST['total_price']) . "', " . $row['Id_utilisateur'] . ")";
-    
-
-    if (mysqli_query($conn, $sql)) {
-        echo "<h2>Enregistrement du séjour réussi !</h2>";
-    } else {
-        echo "<p>Erreur lors de l'enregistrement du séjour : " . mysqli_error($conn) . "</p>";
+        if ($row && isset($row["Id_utilisateur"])) {
+            $sql = "INSERT INTO sejour (Statut, Prix_total, Id_utilisateur) VALUES ('Payé', '" . $totalPrice . "', " . $row["Id_utilisateur"] . ")";
+            mysqli_query($conn, $sql);
+        }
     }
 
-    $paye = "INSERT INTO payer (Id_utilisateur) VALUES (" . $row['Id_utilisateur'] . ")";
-    if (mysqli_query($conn, $paye)) {
-        echo "<h2>Enregistrement du paiement réussi !</h2>";
-    } else {
-        echo "<p>Erreur lors de l'enregistrement du paiement : " . mysqli_error($conn) . "</p>";
-    }
-};
-    
+    header("Location: ../../confirmation_paiement.html?total=" . urlencode($totalPrice));
+    exit();
+}
+
+header("Location: ../../paiement.html");
+exit();
 ?>

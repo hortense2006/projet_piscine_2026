@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°11">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/inscription.php" afterDir="false" />
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°12">
+      <change beforePath="$PROJECT_DIR$/paiement.html" beforeDir="false" afterPath="$PROJECT_DIR$/paiement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/paiement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/paiement.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/paiement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/paiement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/paiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/paiement.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,9 @@
     &quot;assignee&quot;: &quot;valentineSM&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="ead8e739-57eb-46ba-a5c3-3da8a9fae418" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/hortense2006/projet_piscine_2026.git&quot;,
@@ -253,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780116509639</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Commit n°12">
+      <option name="closed" value="true" />
+      <created>1780218924075</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780218924075</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,10 +279,10 @@
     <MESSAGE value="Commit n°4" />
     <MESSAGE value="Commit n°5" />
     <MESSAGE value="Commit n°6" />
-    <MESSAGE value="Commit n°12" />
     <MESSAGE value="Commit n°13" />
     <MESSAGE value="Commit n°14" />
     <MESSAGE value="Commit n°15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit n°15" />
+    <MESSAGE value="Commit n°12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°12" />
   </component>
 </project>

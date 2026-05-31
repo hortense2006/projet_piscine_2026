@@ -87,5 +87,11 @@ document.getElementById("payment-form").addEventListener("submit", (e) => {
         0
     );
 
+    localStorage.setItem("voyagevistaDerniereCommande", JSON.stringify({
+        total: totalPrice,
+        items: cart
+    }));
+
     document.getElementById("total-price-input").value = totalPrice;
+    document.getElementById("order-items-input").value = JSON.stringify(cart);
 });

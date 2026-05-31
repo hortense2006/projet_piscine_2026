@@ -234,6 +234,20 @@ button {
     opacity: 0.5;
 }
 
+.dashboard-button {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 24px;
+    color: #ffffff;
+    border-radius: 8px;
+    background: #1268e8;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 12px 24px rgba(18, 104, 232, 0.22);
+}
+
 .payment-message {
     min-height: 24px;
     margin-top: 14px;
