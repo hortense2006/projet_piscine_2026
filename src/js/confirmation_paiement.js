@@ -6,6 +6,12 @@ function getConfirmation() {
     return JSON.parse(localStorage.getItem("voyagevistaDerniereCommande") || "null");
 }
 
+function resetReservationStorage() {
+    localStorage.removeItem("voyagevistaCart");
+    localStorage.removeItem("voyagevistaReservation");
+    localStorage.removeItem("voyagevistaDerniereCommande");
+}
+
 function renderConfirmation() {
     const confirmation = getConfirmation();
     const itemsContainer = document.getElementById("confirmation-items");
@@ -16,6 +22,7 @@ function renderConfirmation() {
         itemsContainer.innerHTML = "<p class='empty-order'>Aucun détail de commande n'est disponible.</p>";
         countElement.textContent = "0";
         totalElement.textContent = formatPrice(Number(new URLSearchParams(window.location.search).get("total")) || 0);
+        resetReservationStorage();
         return;
     }
 
@@ -48,7 +55,7 @@ function renderConfirmation() {
         itemsContainer.appendChild(row);
     });
 
-    localStorage.removeItem("voyagevistaCart");
+    resetReservationStorage();
 }
 
 renderConfirmation();

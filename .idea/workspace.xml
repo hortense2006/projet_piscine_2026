@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°15">
-      <change beforePath="$PROJECT_DIR$/VoyageVista.sql" beforeDir="false" afterPath="$PROJECT_DIR$/VoyageVista.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/paiement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/paiement.php" afterDir="false" />
+    <list default="true" id="26941d9a-feb9-47e2-a922-320513be3de4" name="Changes" comment="Commit n°17">
+      <change beforePath="$PROJECT_DIR$/src/js/confirmation_paiement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/confirmation_paiement.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +283,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780223950048</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Commit n°16">
+      <option name="closed" value="true" />
+      <created>1780224788423</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1780224788423</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Commit n°17">
+      <option name="closed" value="true" />
+      <created>1780225802227</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1780225802227</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +320,8 @@
     <MESSAGE value="Commit n°13" />
     <MESSAGE value="Commit n°14" />
     <MESSAGE value="Commit n°15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit n°15" />
+    <MESSAGE value="Commit n°16" />
+    <MESSAGE value="Commit n°17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit n°17" />
   </component>
 </project>
