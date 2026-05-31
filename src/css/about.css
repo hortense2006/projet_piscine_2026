@@ -16,6 +16,10 @@ a {
     text-decoration: none;
 }
 
+input {
+    font: inherit;
+}
+
 .layout {
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto;
@@ -35,6 +39,16 @@ a {
     align-items: center;
     gap: 34px;
     min-height: 76px;
+}
+
+.connected-header,
+.visitor-header {
+    display: none;
+}
+
+html.is-connected .connected-header,
+html.is-visitor .visitor-header {
+    display: block;
 }
 
 .brand {
@@ -78,8 +92,47 @@ a {
     color: #1268e8;
 }
 
+.visitor-header .main-nav {
+    width: auto;
+    justify-content: flex-end;
+    gap: 26px;
+    font-size: 0.94rem;
+    text-transform: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1 1 420px;
+}
+
+.search-bar input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 16px;
+    color: #10264b;
+    border: 1px solid #d4e2f1;
+    border-radius: 8px;
+    background: #f8fbff;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #1268e8;
+    box-shadow: 0 0 0 3px rgba(18, 104, 232, 0.12);
+}
+
 .logout-link {
     color: #1268e8;
+}
+
+.login-link {
+    padding: 14px 18px;
+    color: #ffffff;
+    border-radius: 8px;
+    background: #1268e8;
+    box-shadow: 0 14px 28px rgba(18, 104, 232, 0.22);
 }
 
 .about-hero {
@@ -191,6 +244,11 @@ a {
         order: 2;
         flex-wrap: wrap;
         justify-content: flex-start;
+    }
+
+    .search-bar {
+        order: 3;
+        flex-basis: 100%;
     }
 
     .about-panel {

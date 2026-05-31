@@ -32,6 +32,73 @@ if (!is_array($orderItems)) {
 
 $_SESSION["dernier_panier"] = $orderItems;
 
+$firstItem = $orderItems[0] ?? [];
+$destinationName = $firstItem["destination"] ?? "Destination non renseignée";
+$destinationParts = array_map("trim", explode(",", $destinationName, 2));
+$destinationCity = $destinationParts[0] ?: "Destination non renseignée";
+$destinationCountry = $destinationParts[1] ?? "Non renseigné";
+$departureDate = $firstItem["depart"] ?? date("Y-m-d");
+$returnDate = $firstItem["retour"] ?? $departureDate;
+$travelersLabel = $firstItem["voyageurs"] ?? "1 adulte";
+$travelersCount = (stripos($travelersLabel, "famille") !== false) ? 4 : ((int) $travelersLabel ?: 1);
+
+function normalizeDateTime($dateValue) {
+    if (!$dateValue) {
+        return date("Y-m-d H:i:s");
+    }
+
+    return date("Y-m-d H:i:s", strtotime($dateValue . " 09:00:00"));
+}
+
+function getItemPriceByType($items, $type) {
+    foreach ($items as $item) {
+        if (($item["type"] ?? "") === $type) {
+            return (float) ($item["price"] ?? 0);
+        }
+    }
+
+    return 0;
+}
+
+$destinationSql = "INSERT INTO Destination (Nom_ville, Pays, Description) VALUES (?, ?, ?)";
+$destinationStmt = mysqli_prepare($conn, $destinationSql);
+$destinationDescription = "Destination réservée depuis VoyageVista.";
+mysqli_stmt_bind_param($destinationStmt, "sss", $destinationCity, $destinationCountry, $destinationDescription);
+mysqli_stmt_execute($destinationStmt);
+
+foreach ($orderItems as $item) {
+    $itemType = $item["type"] ?? "";
+    $itemLabel = $item["label"] ?? "Élément réservé";
+    $itemPrice = (float) ($item["price"] ?? 0);
+
+    if ($itemType === "hôtel") {
+        $hebergementSql = "INSERT INTO Hebergement (Nom, Type, Capacite_max, Prix_nuit) VALUES (?, ?, ?, ?)";
+        $hebergementStmt = mysqli_prepare($conn, $hebergementSql);
+        $hebergementType = "Hôtel";
+        mysqli_stmt_bind_param($hebergementStmt, "ssid", $itemLabel, $hebergementType, $travelersCount, $itemPrice);
+        mysqli_stmt_execute($hebergementStmt);
+    }
+
+    if ($itemType === "activité") {
+        $activiteSql = "INSERT INTO Activite (Nom_activite, Description, Heure, Capacite_max, Prix) VALUES (?, ?, ?, ?, ?)";
+        $activiteStmt = mysqli_prepare($conn, $activiteSql);
+        $activiteDescription = "Activité réservée depuis VoyageVista.";
+        $activityDate = normalizeDateTime($departureDate);
+        mysqli_stmt_bind_param($activiteStmt, "sssid", $itemLabel, $activiteDescription, $activityDate, $travelersCount, $itemPrice);
+        mysqli_stmt_execute($activiteStmt);
+    }
+}
+
+$transportSql = "INSERT INTO Transport (Type_transport, Lieu_depart, Lieu_arrivee, Date_depart, Date_arrivee, Prix, Capacite) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$transportStmt = mysqli_prepare($conn, $transportSql);
+$transportType = "Avion";
+$departurePlace = "Paris";
+$transportDeparture = normalizeDateTime($departureDate);
+$transportReturn = normalizeDateTime($returnDate);
+$transportPrice = 0;
+mysqli_stmt_bind_param($transportStmt, "sssssdi", $transportType, $departurePlace, $destinationCity, $transportDeparture, $transportReturn, $transportPrice, $travelersCount);
+mysqli_stmt_execute($transportStmt);
+
 $statut = "Confirmé";
 $sql = "INSERT INTO Sejour (Date_creation, Statut, Prix_total, Id_utilisateur) VALUES (NOW(), ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);

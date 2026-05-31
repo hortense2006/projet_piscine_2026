@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoyageVista - À propos</title>
-    <link rel="stylesheet" href="src/css/about.css">
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="src/css/about_avantconnexion.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="layout navbar">
-            <a class="brand" href="dashboard.html" aria-label="VoyageVista">
-                <span class="brand-icon">✈</span>
+    <header>
+        <div class="page navbar">
+            <a class="logo" href="index.html" aria-label="VoyageVista">
+                <span class="logo-mark">✈</span>
                 <span>VoyageVista</span>
             </a>
 
-            <nav class="main-nav" aria-label="Navigation principale">
-                <a href="dashboard.html">Accueil</a>
+            <form class="search-bar" action="index.html#destinations">
+                <input type="search" name="search" placeholder="Rechercher une destination" aria-label="Rechercher une destination">
+            </form>
+
+            <nav aria-label="Navigation principale">
                 <a href="destinations.html">Destinations</a>
-                <a class="active" href="about.html">À propos</a>
-                <a href="src/php/profil.php">Profil</a>
-                <a class="logout-link" href="index.html">Déconnexion</a>
+                <a class="active-link" href="about_avantconnexion.html">À propos</a>
+                <a class="login-link" href="connexion.html">Connexion / Inscription</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="about-hero">
-            <div class="layout hero-content">
-                <p class="eyebrow">À propos du projet</p>
+    <main class="page">
+        <section class="hero about-public-hero" aria-label="À propos de VoyageVista">
+            <div class="hero-content about-public-content">
+                <div class="eyebrow">À propos du projet</div>
                 <h1>VoyageVista est un projet étudiant</h1>
                 <p>Cette plateforme a été réalisée dans un cadre pédagogique pour imaginer une interface de réservation de voyages moderne, claire et agréable à utiliser.</p>
             </div>
         </section>
 
-        <section class="layout about-panel">
-            <div class="about-text">
-                <p class="eyebrow">Notre objectif</p>
+        <section class="destinations-section about-public-panel">
+            <div class="about-public-text">
+                <div class="eyebrow">Notre objectif</div>
                 <h2>Concevoir une expérience de voyage complète</h2>
                 <p>VoyageVista permet de parcourir des destinations, consulter une fiche détaillée, sélectionner un hôtel, choisir des activités, gérer un panier et accéder à une page de paiement.</p>
                 <p>Le site sert avant tout à démontrer des compétences en HTML, CSS, JavaScript, PHP et SQL, avec une navigation cohérente entre les pages et un design harmonisé.</p>
             </div>
 
-            <div class="project-card">
+            <aside class="about-public-card">
                 <h2>Informations</h2>
                 <dl>
                     <div>
@@ -57,22 +60,17 @@
                         <dd>Hortense GALTIER, Valentine SAUVAIRE--MASSONNAT, Ewen ALBALADEJO</dd>
                     </div>
                 </dl>
-            </div>
+            </aside>
         </section>
     </main>
 
-    <footer class="site-footer" id="about">
+    <footer id="about">
         <small>
-            <div class="layout">VoyageVista - Hortense GALTIER, Valentine SAUVAIRE--MASSONNAT, Ewen ALBALADEJO</div>
+            <div class="page">VoyageVista - Hortense GALTIER, Valentine SAUVAIRE--MASSONNAT, Ewen ALBALADEJO</div>
         </small>
     </footer>
     <script>
-        document.querySelectorAll(".logout-link").forEach(function (link) {
-            link.addEventListener("click", function () {
-                localStorage.removeItem("statutConnexion");
-                localStorage.removeItem("voyagevistaCart");
-            });
-        });
+        localStorage.removeItem("statutConnexion");
     </script>
 </body>
 </html>
