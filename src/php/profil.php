@@ -38,7 +38,7 @@
                 <a href="#voyages">Mes voyages</a>
                 <a href="../../about.html">À propos</a>
                 <a class="active" href="#top">Profil</a>
-                <a class="logout-link" href="index.html">Déconnexion</a>
+                <a class="logout-link" href="../../index.html">Déconnexion</a>
             </nav>
         </div>
     </header>
