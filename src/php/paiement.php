@@ -91,7 +91,7 @@ foreach ($orderItems as $item) {
 
 $transportSql = "INSERT INTO Transport (Type_transport, Lieu_depart, Lieu_arrivee, Date_depart, Date_arrivee, Prix, Capacite, Id_utilisateur) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $transportStmt = mysqli_prepare($conn, $transportSql);
-$transportType = "Avion";
+$transportType = $firstItem["transport"] ?? "Avion";
 $departurePlace = "Paris";
 $transportDeparture = normalizeDateTime($departureDate);
 $transportReturn = normalizeDateTime($returnDate);

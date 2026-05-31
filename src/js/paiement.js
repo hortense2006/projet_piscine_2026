@@ -12,7 +12,7 @@ function formatPrice(price) {
 
 function getCartGroups(cart) {
     return cart.reduce((groups, item) => {
-        const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}`;
+        const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}|${item.transport || ""}`;
         if (!groups[key]) {
             groups[key] = {
                 ...item,
@@ -63,6 +63,11 @@ function renderOrder() {
             ? ` · ${item.voyageurs} · du ${item.depart} au ${item.retour}`
             : "";
         meta.textContent = `${item.destination} · ${item.type}${reservationMeta}`;
+        const transportMeta = item.transport || "Transport non renseigne";
+        if (item.depart && item.retour) {
+            meta.textContent = `${item.destination} - ${item.type} - ${item.voyageurs} - ${transportMeta} - du ${item.depart} au ${item.retour}`;
+        }
+
         details.appendChild(title);
         details.appendChild(meta);
 

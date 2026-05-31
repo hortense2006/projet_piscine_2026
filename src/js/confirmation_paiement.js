@@ -48,6 +48,11 @@ function renderConfirmation() {
         price.className = "order-price";
         price.textContent = formatPrice(Number(item.price) || 0);
 
+        const transportMeta = item.transport || "Transport non renseigne";
+        if (item.depart && item.retour) {
+            meta.textContent = `${item.destination} - ${item.type} - ${item.voyageurs} - ${transportMeta} - du ${item.depart} au ${item.retour}`;
+        }
+
         details.appendChild(title);
         details.appendChild(meta);
         row.appendChild(details);

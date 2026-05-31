@@ -224,6 +224,8 @@ const destinations = {
         const reservationTravelers = document.getElementById("reservation-travelers");
         const departureDate = document.getElementById("departure-date");
         const returnDate = document.getElementById("return-date");
+        const transportChoice = document.getElementById("transport-choice");
+        const transportOptions = ["Avion", "Train", "Voiture", "Bateau", "Car"];
 
         function getSavedReservation() {
             const savedReservation = JSON.parse(localStorage.getItem("voyagevistaReservation") || "null");
@@ -263,6 +265,7 @@ const destinations = {
                 depart: departureDate.value,
                 retour: returnDate.value,
                 voyageurs: reservationTravelers.value,
+                transport: transportChoice.value,
                 duree: getDurationDays()
             }));
         }
@@ -284,8 +287,16 @@ const destinations = {
             const savedReservation = getSavedReservation();
             reservationTravelers.value = savedReservation?.voyageurs || "2 adultes";
             departureDate.value = savedReservation?.depart || getDefaultDepartureDate();
+            transportChoice.value = savedReservation?.transport || "Avion";
             updateReturnDate();
         }
+
+        transportOptions.forEach((transport) => {
+            const option = document.createElement("option");
+            option.value = transport;
+            option.textContent = transport;
+            transportChoice.appendChild(option);
+        });
 
         destination.hotels.forEach((hotel) => {
             const item = document.createElement("li");
@@ -366,7 +377,7 @@ const destinations = {
 
         function getCartGroups(cart) {
             return cart.reduce((groups, item) => {
-                const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}`;
+                const key = `${item.destination}|${item.type}|${item.label}|${item.depart || ""}|${item.retour || ""}|${item.voyageurs || ""}|${item.transport || ""}`;
                 if (!groups[key]) {
                     groups[key] = {
                         ...item,
@@ -410,6 +421,11 @@ const destinations = {
                     ? ` · ${item.voyageurs} · du ${item.depart} au ${item.retour}`
                     : "";
                 meta.textContent = `${item.destination} · ${item.type}${reservationMeta}`;
+                const transportMeta = item.transport || "Transport non renseigne";
+                if (item.depart && item.retour) {
+                    meta.textContent = `${item.destination} - ${item.type} - ${item.voyageurs} - ${transportMeta} - du ${item.depart} au ${item.retour}`;
+                }
+
                 details.appendChild(title);
                 details.appendChild(meta);
 
@@ -457,6 +473,7 @@ const destinations = {
                 depart: departureDate.value,
                 retour: returnDate.value,
                 voyageurs: reservationTravelers.value,
+                transport: transportChoice.value,
                 duree: getDurationDays(),
                 date: new Date().toISOString()
             });
@@ -490,6 +507,10 @@ const destinations = {
 
         departureDate.addEventListener("change", updateReturnDate);
         reservationTravelers.addEventListener("change", () => {
+            saveReservationOptions();
+            renderCart();
+        });
+        transportChoice.addEventListener("change", () => {
             saveReservationOptions();
             renderCart();
         });

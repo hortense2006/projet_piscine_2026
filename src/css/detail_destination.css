@@ -175,14 +175,16 @@ summary {
     gap: 20px;
 }
 
-.reservation-options {
+.reservation-options,
+.transport-options {
     padding: 20px;
     border: 1px solid #dfeaf4;
     border-radius: 8px;
     background: #f8fbff;
 }
 
-.reservation-options h2 {
+.reservation-options h2,
+.transport-options h2 {
     margin-bottom: 14px;
     color: #10264b;
     font-size: 0.9rem;
@@ -220,6 +222,10 @@ summary {
 .reservation-field input[readonly] {
     color: #667890;
     background: #eef6fb;
+}
+
+.transport-options .reservation-field {
+    max-width: 360px;
 }
 
 .choice-row {
