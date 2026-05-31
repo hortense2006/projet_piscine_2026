@@ -69,7 +69,7 @@ if (!$conn) {
                                  echo"<br><p>Cliquez ci-dessous pour vous connecter avec votre mot de passe récupéré</p>";
                                 echo '<a href="../../connexion.html"><button type="button">Connexion</button></a>';                             
                                 } else {
-                                 echo "<h2>Erreur</h2>";
+                                 echo "<br><h2>Erreur</h2>";
                                  echo "<p>Aucun utilisateur trouvé avec cette adresse e-mail.</p>";
                              }
                         }
